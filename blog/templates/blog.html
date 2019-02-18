@@ -6,10 +6,12 @@
 <br>
       {% for blog in posts %}
       <div class="container">
-          <a href="{% url 'detail' blog.id %}">
-              <h1>{{ blog.title }}</h1>
-          </a>
-          <p>{{ blog.pub_date }}</p>
+          <div class= "flex">
+            <a href="{% url 'detail' blog.id %}" style="text-decoration : none" class="left">
+                <h1>{{ blog.title }}</h1>
+            </a>
+            <p class="right">{{ blog.pub_date }}</p>
+          </div>
           <p>{{ blog.summary }}<a href="{% url 'detail' blog.id %}">...more</a></p>
       </div>
       {% endfor %}
